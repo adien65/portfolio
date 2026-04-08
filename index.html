@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matteo Gras — Portfolio Développeur BTS SIO SLAM 2026</title>
+  <meta name="description" content="Portfolio de Matteo Gras, développeur web en formation BTS SIO SLAM session 2026. Projets web, stages et veille technologique." />
+  <meta name="author" content="Matteo Gras" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Matteo Gras — Portfolio BTS SIO SLAM 2026" />
+  <meta property="og:description" content="Développeur Web & Expert Solutions Informatiques, session 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://github.com/adien65" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Scroll progress bar -->
+  <style>
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #2563EB, #60a5fa);
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- =============================================
+       NAVIGATION
+       ============================================= -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo" aria-label="Retour accueil">MG<span class="nav__logo-dot">.</span></a>
+
+      <ul class="nav__links" id="nav-links" role="list" aria-label="Liens de navigation">
+        <li><a href="#presentation" class="nav__link">Présentation</a></li>
+        <li><a href="#competences" class="nav__link">Compétences</a></li>
+        <li><a href="#projets"      class="nav__link">Projets</a></li>
+        <li><a href="#stages"       class="nav__link">Stages</a></li>
+        <li><a href="#veille"       class="nav__link">Veille</a></li>
+        <li><a href="#contact"      class="nav__link">Contact</a></li>
+      </ul>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- =============================================
+         HERO
+         ============================================= -->
+    <section class="hero" id="hero" aria-label="Présentation principale">
+      <div class="hero__container">
+
+        <!-- Left: Text -->
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            BTS SIO SLAM &middot; Session 2026
+          </div>
+
+          <h1 class="hero__title">
+            Matteo<br />
+            <span class="hero__title-accent">Gras</span>
+          </h1>
+
+          <p class="hero__subtitle" aria-live="polite">
+            <span id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true">|</span>
+          </p>
+
+          <div class="hero__cta">
+            <a href="assets/cv/CV-Matteo-Gras.pdf"
+               download
+               class="btn btn--primary"
+               id="btn-cv"
+               aria-label="Télécharger le CV de Matteo Gras">
+              <!-- Download icon -->
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Télécharger CV
+            </a>
+
+            <a href="#projets" class="btn btn--secondary" id="btn-see-projects" aria-label="Voir mes projets">
+              Voir mes projets
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Visual -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__avatar-wrapper">
+            <img src="assets/images/avatar.png" alt="Matteo Gras" class="hero__avatar" />
+            <div class="hero__avatar-ring"></div>
+          </div>
+          <div class="hero__float hero__float--1"><span>⚡</span> PHP &amp; MySQL</div>
+          <div class="hero__float hero__float--2"><span>🚀</span> Laravel · PHP</div>
+          <div class="hero__float hero__float--3"><span>🐧</span> Linux · LAMP</div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         À PROPOS
+         ============================================= -->
+    <section class="about section" id="presentation">
+      <div class="container">
+        <div class="section-tag reveal">À propos</div>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <h2 class="section-title reveal">
+              Développeur web<br />en formation BTS SIO<span class="accent-dot">.</span>
+            </h2>
+            <p class="about__desc reveal" style="--delay:0.1s">
+              Étudiant en BTS SIO option <strong>SLAM</strong>, je développe des compétences solides
+              en développement web depuis 2 ans. Curieux et rigoureux, je m'attache à produire
+              des solutions propres et bien structurées, du côté base de données jusqu'à l'interface.
+            </p>
+            <p class="about__desc reveal" style="--delay:0.2s">
+              Mon parcours couvre des projets variés : sites web dynamiques,
+              sites vitrines, et déploiement d'infrastructures serveur. Je maintiens une veille
+              technologique régulière via <strong>Inoreader</strong> pour rester à jour sur le secteur.
+            </p>
+          </div>
+
+          <div class="about__stats">
+            <div class="stat-card reveal" style="--delay:0s">
+              <span class="stat-card__number">2</span>
+              <span class="stat-card__label">Ans de formation</span>
+            </div>
+            <div class="stat-card reveal" style="--delay:0.1s">
+              <span class="stat-card__number">3</span>
+              <span class="stat-card__label">Projets réalisés</span>
+            </div>
+            <div class="stat-card reveal" style="--delay:0.2s">
+              <span class="stat-card__number">2</span>
+              <span class="stat-card__label">Stages effectués</span>
+            </div>
+            <div class="stat-card reveal" style="--delay:0.3s">
+              <span class="stat-card__number">10+</span>
+              <span class="stat-card__label">Technologies maîtrisées</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         COMPÉTENCES
+         ============================================= -->
+    <section class="skills section" id="competences">
+      <div class="container">
+        <div class="section-tag reveal">Compétences</div>
+        <h2 class="section-title text-center reveal">Ce que je maîtrise<span class="accent-dot">.</span></h2>
+        <p class="section-subtitle text-center reveal">Mon stack technique acquis en formation et en stage.</p>
+
+        <div class="skills__grid">
+
+          <div class="skill-domain reveal" style="--delay:0s">
+            <span class="skill-domain__icon">🌐</span>
+            <h3 class="skill-domain__title">Frontend</h3>
+            <p class="skill-domain__desc">Intégration &amp; interfaces</p>
+            <div class="skill-chips">
+              <span class="chip">HTML5</span>
+              <span class="chip">CSS3</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skill-domain reveal" style="--delay:0.07s">
+            <span class="skill-domain__icon">⚙️</span>
+            <h3 class="skill-domain__title">Backend</h3>
+            <p class="skill-domain__desc">Logique serveur &amp; API</p>
+            <div class="skill-chips">
+              <span class="chip">PHP</span>
+              <span class="chip">Python</span>
+              <span class="chip">REST API</span>
+            </div>
+          </div>
+
+          <!-- Laravel / TALL Stack : card mise en avant -->
+          <div class="skill-domain skill-domain--highlight reveal" style="--delay:0.14s">
+            <span class="skill-domain__icon">🧱</span>
+            <h3 class="skill-domain__title">Laravel &amp; TALL Stack</h3>
+            <p class="skill-domain__desc">Framework PHP &amp; écosystème</p>
+            <div class="skill-chips">
+              <span class="chip chip--accent">Laravel</span>
+              <span class="chip chip--accent">Tailwind CSS</span>
+              <span class="chip chip--accent">Alpine.js</span>
+              <span class="chip chip--accent">Livewire</span>
+            </div>
+          </div>
+
+          <div class="skill-domain reveal" style="--delay:0.21s">
+            <span class="skill-domain__icon">🗄️</span>
+            <h3 class="skill-domain__title">Base de données</h3>
+            <p class="skill-domain__desc">Modélisation &amp; requêtes</p>
+            <div class="skill-chips">
+              <span class="chip">MySQL</span>
+              <span class="chip">Merise</span>
+              <span class="chip">UML</span>
+            </div>
+          </div>
+
+          <div class="skill-domain reveal" style="--delay:0.28s">
+            <span class="skill-domain__icon">🖥️</span>
+            <h3 class="skill-domain__title">Infra &amp; Serveur</h3>
+            <p class="skill-domain__desc">Déploiement &amp; administration</p>
+            <div class="skill-chips">
+              <span class="chip">Linux</span>
+              <span class="chip">LAMP</span>
+              <span class="chip">Apache</span>
+              <span class="chip">GLPI</span>
+              <span class="chip">SSH</span>
+            </div>
+          </div>
+
+          <div class="skill-domain reveal" style="--delay:0.35s">
+            <span class="skill-domain__icon">🛠️</span>
+            <h3 class="skill-domain__title">Outils</h3>
+            <p class="skill-domain__desc">Workflow &amp; productivité</p>
+            <div class="skill-chips">
+              <span class="chip">Git</span>
+              <span class="chip">GitHub</span>
+              <span class="chip">VS Code</span>
+              <span class="chip">Antigravity</span>
+              <span class="chip">Inoreader</span>
+            </div>
+          </div>
+
+          <div class="skill-domain reveal" style="--delay:0.42s">
+            <span class="skill-domain__icon">📐</span>
+            <h3 class="skill-domain__title">Méthodo</h3>
+            <p class="skill-domain__desc">Organisation &amp; analyse</p>
+            <div class="skill-chips">
+              <span class="chip">Merise</span>
+              <span class="chip">UML</span>
+              <span class="chip">Agile</span>
+              <span class="chip">Scrum</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PROJETS
+         ============================================= -->
+    <section class="section" id="projets" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-tag reveal">Projets scolaires</div>
+        <h2 class="section-title reveal">Mes réalisations<span class="accent-dot">.</span></h2>
+        <p class="section-subtitle reveal">Développés tout au long de ma formation BTS SIO SLAM.</p>
+
+        <div class="cards-grid">
+
+          <!-- Projet 1 — Site dynamique -->
+          <article class="project-card reveal" style="--delay:0s">
+            <div class="project-card__image-wrapper">
+              <img src="assets/images/project-1.png"
+                   alt="Aperçu du site web dynamique"
+                   class="project-card__image"
+                   loading="lazy" />
+              <div class="project-card__tag">Site Dynamique</div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Site Web Dynamique</h3>
+              <p class="project-card__desc">
+                Application web avec gestion de base de données, authentification utilisateur 
+                et interface d'administration. Backend PHP, base MySQL.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-chip">PHP</span>
+                <span class="tech-chip">MySQL</span>
+                <span class="tech-chip">HTML/CSS</span>
+                <span class="tech-chip">JavaScript</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="#"
+                   class="btn-card btn-card--primary"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project1-site"
+                   aria-label="Voir le site dynamique en ligne">
+                  <!-- Globe icon -->
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Voir le site
+                </a>
+                <a href="assets/docs/doc-projet1.pdf"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project1-doc"
+                   aria-label="Documentation PDF projet dynamique">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Documentation
+                </a>
+                <a href="https://github.com/adien65"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project1-code"
+                   aria-label="Code source sur GitHub">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  Code Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 2 — Site vitrine -->
+          <article class="project-card reveal" style="--delay:0.1s">
+            <div class="project-card__image-wrapper">
+              <img src="assets/images/project-2.png"
+                   alt="Aperçu du site vitrine statique"
+                   class="project-card__image"
+                   loading="lazy" />
+              <div class="project-card__tag">Site Vitrine</div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Site Vitrine Statique</h3>
+              <p class="project-card__desc">
+                Site de présentation d'une entreprise ou d'un produit. 
+                Entièrement statique, optimisé pour les performances, le référencement et l'accessibilité.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-chip">HTML5</span>
+                <span class="tech-chip">CSS3</span>
+                <span class="tech-chip">JavaScript</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="#"
+                   class="btn-card btn-card--primary"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project2-site"
+                   aria-label="Voir le site vitrine en ligne">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Voir le site
+                </a>
+                <a href="assets/docs/doc-projet2.pdf"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project2-doc"
+                   aria-label="Documentation PDF site vitrine">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Documentation
+                </a>
+                <a href="https://github.com/adien65"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project2-code"
+                   aria-label="Code source site vitrine sur GitHub">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  Code Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projet 3 — LAMP + GLPI -->
+          <article class="project-card reveal" style="--delay:0.2s">
+            <div class="project-card__image-wrapper">
+              <img src="assets/images/project-3.png"
+                   alt="Aperçu du serveur LAMP et GLPI"
+                   class="project-card__image"
+                   loading="lazy" />
+              <div class="project-card__tag project-card__tag--infra">Infrastructure</div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Déploiement LAMP + GLPI</h3>
+              <p class="project-card__desc">
+                Mise en place d'un serveur LAMP sous Linux avec déploiement et configuration 
+                de GLPI pour la gestion de parc informatique et le helpdesk.
+              </p>
+              <div class="project-card__tech">
+                <span class="tech-chip">Linux</span>
+                <span class="tech-chip">Apache</span>
+                <span class="tech-chip">MySQL</span>
+                <span class="tech-chip">PHP</span>
+                <span class="tech-chip">GLPI</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="assets/docs/doc-projet3.pdf"
+                   class="btn-card btn-card--primary"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project3-doc"
+                   aria-label="Documentation PDF LAMP GLPI">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Documentation
+                </a>
+                <a href="https://github.com/adien65"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-project3-code"
+                   aria-label="Code source LAMP GLPI sur GitHub">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  Code Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         STAGES
+         ============================================= -->
+    <section class="section" id="stages" style="background: var(--bg);">
+      <div class="container">
+        <div class="section-tag reveal">Expérience</div>
+        <h2 class="section-title reveal">Mes stages<span class="accent-dot">.</span></h2>
+        <p class="section-subtitle reveal">Deux expériences en entreprise dans le domaine informatique.</p>
+
+        <div class="cards-grid">
+
+          <!-- Stage 1 -->
+          <article class="stage-card reveal" style="--delay:0s">
+            <div class="stage-card__image-wrapper">
+              <img src="assets/images/stage-1.png"
+                   alt="Entreprise stage 1"
+                   class="stage-card__image"
+                   loading="lazy" />
+              <div class="stage-card__badge">Stage 1</div>
+            </div>
+            <div class="stage-card__body">
+              <div class="stage-card__meta">
+                <span class="stage-card__company">📍 À compléter — Ville</span>
+                <span class="stage-card__duration">🗓 Période — Durée</span>
+              </div>
+              <h3 class="stage-card__title">Intitulé du poste &amp; Mission</h3>
+              <p class="stage-card__desc">
+                Description de tes missions principales, des tâches réalisées et des 
+                compétences développées pendant ce premier stage.
+              </p>
+              <div class="stage-card__skills">
+                <span class="chip chip--stage">Compétence 1</span>
+                <span class="chip chip--stage">Compétence 2</span>
+                <span class="chip chip--stage">Compétence 3</span>
+              </div>
+              <div class="stage-card__actions">
+                <a href="assets/docs/rapport-stage1.pdf"
+                   class="btn-card btn-card--primary"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-stage1-rapport"
+                   aria-label="Rapport de stage 1">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Rapport de stage
+                </a>
+                <a href="#"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-stage1-entreprise"
+                   aria-label="Voir le site de l'entreprise">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Voir l'entreprise
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stage 2 -->
+          <article class="stage-card reveal" style="--delay:0.12s">
+            <div class="stage-card__image-wrapper">
+              <img src="assets/images/stage-2.png"
+                   alt="Entreprise stage 2"
+                   class="stage-card__image"
+                   loading="lazy" />
+              <div class="stage-card__badge">Stage 2</div>
+            </div>
+            <div class="stage-card__body">
+              <div class="stage-card__meta">
+                <span class="stage-card__company">📍 À compléter — Ville</span>
+                <span class="stage-card__duration">🗓 Période — Durée</span>
+              </div>
+              <h3 class="stage-card__title">Intitulé du poste &amp; Mission</h3>
+              <p class="stage-card__desc">
+                Description de tes missions principales, des tâches réalisées et des 
+                compétences développées pendant ce deuxième stage.
+              </p>
+              <div class="stage-card__skills">
+                <span class="chip chip--stage">Compétence 1</span>
+                <span class="chip chip--stage">Compétence 2</span>
+                <span class="chip chip--stage">Compétence 3</span>
+              </div>
+              <div class="stage-card__actions">
+                <a href="assets/docs/rapport-stage2.pdf"
+                   class="btn-card btn-card--primary"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-stage2-rapport"
+                   aria-label="Rapport de stage 2">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Rapport de stage
+                </a>
+                <a href="#"
+                   class="btn-card"
+                   target="_blank" rel="noopener noreferrer"
+                   id="btn-stage2-entreprise"
+                   aria-label="Voir le site de l'entreprise stage 2">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Voir l'entreprise
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         VEILLE TECHNOLOGIQUE
+         ============================================= -->
+    <section class="watch section" id="veille">
+      <div class="container">
+        <div class="section-tag reveal">Veille</div>
+        <h2 class="section-title reveal">Veille Technologique<span class="accent-dot">.</span></h2>
+        <p class="section-subtitle reveal">
+          Je surveille l'actualité tech en continu grâce à <strong>Inoreader</strong> 
+          et ses flux RSS agrégés.
+        </p>
+
+        <!-- Method explanation -->
+        <div class="watch__method reveal" style="--delay:0.1s">
+          <div class="watch__method-icon" aria-hidden="true">📡</div>
+          <div class="watch__method-content">
+            <h3>Ma méthode de veille avec Inoreader</h3>
+            <p>
+              J'utilise <strong>Inoreader</strong> comme agrégateur de flux RSS pour centraliser 
+              et filtrer mes sources d'information technologique. Chaque semaine, je consulte les 
+              flux de mes sources favorites, identifie les tendances clés et sélectionne les articles 
+              les plus pertinents pour mes domaines de veille.
+            </p>
+            <div class="watch__themes" aria-label="Thèmes de veille">
+              <span class="watch-theme">🔐 Cybersécurité</span>
+              <span class="watch-theme">🤖 Intelligence Artificielle</span>
+              <span class="watch-theme">🌐 Développement Web</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documentation banner -->
+        <div class="watch__doc-banner reveal" style="--delay:0.2s">
+          <div class="watch__doc-icon" aria-hidden="true">📄</div>
+          <div class="watch__doc-content">
+            <span class="watch__doc-label">Document de veille</span>
+            <h4>Documentation complète de ma veille technologique</h4>
+          </div>
+          <a href="assets/docs/veille-technologique.pdf"
+             class="btn"
+             target="_blank" rel="noopener noreferrer"
+             id="btn-veille-doc"
+             aria-label="Consulter la documentation de veille technologique">
+            Consulter →
+          </a>
+        </div>
+
+        <!-- Recent articles -->
+        <h3 class="watch__articles-title reveal" style="--delay:0.1s">Articles récents sélectionnés</h3>
+        <div class="watch__articles">
+
+          <a href="#"
+             class="watch-article reveal"
+             target="_blank" rel="noopener noreferrer"
+             style="--delay:0s"
+             id="watch-article-1"
+             aria-label="Article de veille cybersécurité">
+            <div class="watch-article__header">
+              <span class="watch-article__source">🔐 Cybersécurité</span>
+              <span class="watch-article__date">Avr. 2026</span>
+            </div>
+            <h4 class="watch-article__title">Titre de l'article à remplir</h4>
+            <p class="watch-article__excerpt">
+              Résumé de l'article et pourquoi il est pertinent dans le cadre de ma veille technologique.
+            </p>
+            <span class="watch-article__link">Lire l'article →</span>
+          </a>
+
+          <a href="#"
+             class="watch-article reveal"
+             target="_blank" rel="noopener noreferrer"
+             style="--delay:0.1s"
+             id="watch-article-2"
+             aria-label="Article de veille intelligence artificielle">
+            <div class="watch-article__header">
+              <span class="watch-article__source">🤖 IA / ML</span>
+              <span class="watch-article__date">Mars 2026</span>
+            </div>
+            <h4 class="watch-article__title">Titre de l'article à remplir</h4>
+            <p class="watch-article__excerpt">
+              Résumé de l'article et pourquoi il est pertinent dans le cadre de ma veille technologique.
+            </p>
+            <span class="watch-article__link">Lire l'article →</span>
+          </a>
+
+          <a href="#"
+             class="watch-article reveal"
+             target="_blank" rel="noopener noreferrer"
+             style="--delay:0.2s"
+             id="watch-article-3"
+             aria-label="Article de veille développement web">
+            <div class="watch-article__header">
+              <span class="watch-article__source">🌐 Dev Web</span>
+              <span class="watch-article__date">Févr. 2026</span>
+            </div>
+            <h4 class="watch-article__title">Titre de l'article à remplir</h4>
+            <p class="watch-article__excerpt">
+              Résumé de l'article et pourquoi il est pertinent dans le cadre de ma veille technologique.
+            </p>
+            <span class="watch-article__link">Lire l'article →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER / CONTACT
+       ============================================= -->
+  <footer class="footer" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="footer__content">
+
+        <div class="footer__brand">
+          <span class="footer__logo">MG<span class="accent-dot">.</span></span>
+          <p>Développeur Web<br />BTS SIO SLAM 2026</p>
+        </div>
+
+        <div class="footer__contact">
+          <h2 class="footer__title">Travaillons ensemble<span class="accent-dot">.</span></h2>
+          <p class="footer__subtitle">Disponible pour des opportunités de stage, d'alternance ou de collaboration.</p>
+
+          <a href="mailto:mttgras@gmail.com"
+             class="footer__email"
+             id="footer-email"
+             aria-label="Envoyer un email à Matteo Gras">
+            mttgras@gmail.com
+          </a>
+
+          <div class="footer__socials">
+            <a href="https://www.linkedin.com/in/matteo-gras/"
+               class="social-btn"
+               target="_blank" rel="noopener noreferrer"
+               id="btn-linkedin"
+               aria-label="Profil LinkedIn de Matteo Gras">
+              <!-- LinkedIn SVG -->
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/adien65"
+               class="social-btn"
+               target="_blank" rel="noopener noreferrer"
+               id="btn-github"
+               aria-label="Profil GitHub de Matteo Gras">
+              <!-- GitHub SVG -->
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Matteo Gras &middot; Portfolio BTS SIO SLAM</p>
+        <a href="#hero" class="footer__back-top" aria-label="Retour en haut de la page">↑ Haut de page</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

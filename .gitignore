@@ -1,0 +1,19 @@
+# Fichiers ignorés par Git
+
+# PDFs & CV (sensibles / volumineux — à ajouter manuellement si besoin)
+assets/cv/*.pdf
+# Décommenter la ligne ci-dessous si tu veux aussi ignorer les docs :
+# assets/docs/*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/settings.json
+*.swp
+*.swo
+
+# Logs
+*.log
