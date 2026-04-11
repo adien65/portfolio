@@ -569,6 +569,218 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transform: scaleX(1);
   background: linear-gradient(90deg, var(--accent), #60a5fa);
 }
+.skill-domain--highlight .chip {
+  background: var(--accent-light);
+  border-color: rgba(37,99,235,0.3);
+  color: var(--accent);
+}
+
+/* Local badge (pour projets PHP sans démo en ligne) */
+.btn-card--local {
+  background: var(--border-light);
+  border-color: var(--border);
+  color: var(--text-light);
+  cursor: default;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* =========================================
+   FOOTER BOTTOM RIGHT
+   ========================================= */
+.footer__bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer__e5-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-full);
+  transition: all 0.25s var(--ease);
+  cursor: pointer;
+}
+.footer__e5-link:hover {
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.06);
+}
+
+/* =========================================
+   MODAL TABLEAU DE SYNTHÈSE E5
+   ========================================= */
+.modal-e5 {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.modal-e5[hidden] { display: none; }
+
+.modal-e5__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+.modal-e5__content {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border-radius: var(--r-xl);
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.modal-e5__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 2;
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+}
+.modal-e5__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--r-full);
+  margin-bottom: 0.6rem;
+}
+.modal-e5__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.2rem;
+}
+.modal-e5__subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+.modal-e5__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all 0.2s;
+  margin-left: 1rem;
+}
+.modal-e5__close:hover { background: var(--border-light); color: var(--text); }
+.modal-e5__body { padding: 1.5rem 2rem 2rem; }
+
+/* E5 Table */
+.e5-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+}
+.e5-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.e5-table thead {
+  background: var(--bg);
+}
+.e5-table th {
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.e5-table th.e5-comp {
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.75rem;
+  min-width: 44px;
+}
+.e5-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-muted);
+  vertical-align: middle;
+}
+.e5-table tbody tr:last-child td { border-bottom: none; }
+.e5-table tbody tr:hover { background: var(--bg); }
+td.e5-real {
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+td.e5-yes {
+  text-align: center;
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 1rem;
+}
+tr.e5-stage-row td { background: #f0fdf4; }
+tr.e5-stage-row:hover td { background: #dcfce7; }
+tr.e5-stage-row td.e5-real { color: #15803d; }
+
+.e5-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+.e5-legend-item {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--r-full);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: var(--surface);
+}
+.e5-legend-stage {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #16a34a;
+}
+.e5-legend-check {
+  background: var(--accent-light);
+  border-color: rgba(37,99,235,0.2);
+  color: var(--accent);
+}
+.e5-download {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* =========================================
    CARDS GRID (Projects & Stages)

@@ -148,3 +148,42 @@ if (emailLink) {
     // leave default mailto: behavior intact
   });
 }
+
+/* -----------------------------------------
+   MODAL TABLEAU DE SYNTHÈSE E5
+----------------------------------------- */
+const modalE5    = document.getElementById('modal-e5');
+const modalClose = document.getElementById('modal-e5-close');
+const modalOverlay = document.getElementById('modal-e5-overlay');
+const btnTableauE5 = document.getElementById('btn-tableau-e5');
+
+function openModal() {
+  if (!modalE5) return;
+  modalE5.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+
+function closeModal() {
+  if (!modalE5) return;
+  modalE5.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+}
+
+if (btnTableauE5) {
+  btnTableauE5.addEventListener('click', e => {
+    // If it's a direct xlsx download we still open the modal
+    // (the button has href for direct download, but we intercept for modal)
+    e.preventDefault();
+    openModal();
+  });
+}
+
+if (modalClose)   modalClose  .addEventListener('click', closeModal);
+if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modalE5 && !modalE5.hasAttribute('hidden')) {
+    closeModal();
+  }
+});
