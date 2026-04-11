@@ -362,6 +362,15 @@
                   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                   Voir le site
                 </a>
+                <!-- DOC: ajoute href="assets/docs/doc-projet2.pdf" quand la doc est prête -->
+                <a href="#"
+                   class="btn-card btn-card--local"
+                   id="btn-project2-doc"
+                   title="Documentation à venir"
+                   aria-label="Documentation My Jewellery (à venir)">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Documentation
+                </a>
                 <a href="https://github.com/adien65"
                    class="btn-card"
                    target="_blank" rel="noopener noreferrer"
@@ -397,11 +406,12 @@
                 <span class="tech-chip">GLPI</span>
               </div>
               <div class="project-card__actions">
-                <a href="assets/docs/doc-projet3.pdf"
-                   class="btn-card btn-card--primary"
-                   target="_blank" rel="noopener noreferrer"
+                <!-- DOC: ajoute href="assets/docs/doc-projet3.pdf" quand la doc est prête -->
+                <a href="#"
+                   class="btn-card btn-card--local"
                    id="btn-project3-doc"
-                   aria-label="Documentation PDF LAMP GLPI">
+                   title="Documentation à venir"
+                   aria-label="Documentation LAMP GLPI (à venir)">
                   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                   Documentation
                 </a>
@@ -464,6 +474,15 @@
                    aria-label="Voir l'application SaaS en ligne">
                   <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                   Voir l'application
+                </a>
+                <!-- DOC: ajoute href="assets/docs/rapport-stage2.pdf" quand disponible -->
+                <a href="#"
+                   class="btn-card btn-card--local"
+                   id="btn-stage2-doc"
+                   title="Rapport à venir"
+                   aria-label="Rapport de stage 2 (à venir)">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Rapport de stage
                 </a>
               </div>
             </div>
@@ -705,64 +724,76 @@
             <thead>
               <tr>
                 <th>Réalisation</th>
-                <th>Contexte</th>
+                <th>Type</th>
                 <th>Technologies</th>
-                <th class="e5-comp">B1.1</th>
-                <th class="e5-comp">B1.2</th>
-                <th class="e5-comp">B1.3</th>
-                <th class="e5-comp">B1.4</th>
-                <th class="e5-comp">B2.1</th>
-                <th class="e5-comp">B2.2</th>
-                <th class="e5-comp">B2.3</th>
-                <th class="e5-comp">B3.1</th>
-                <th class="e5-comp">B3.2</th>
-                <th class="e5-comp">B3.3</th>
+                <th class="e5-comp" title="Gérer le patrimoine informatique">B1<br><small>Patrimoine</small></th>
+                <th class="e5-comp" title="Répondre aux incidents et demandes">B2<br><small>Support</small></th>
+                <th class="e5-comp" title="Développer la présence en ligne">B3<br><small>Présence</small></th>
+                <th class="e5-comp" title="Travailler en mode projet">B4<br><small>Projet</small></th>
+                <th class="e5-comp" title="Mettre à disposition un service">B5<br><small>Service</small></th>
+                <th class="e5-comp" title="Organiser son développement professionnel">B6<br><small>Pro.</small></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="e5-real">Forma</td>
-                <td>Projet scolaire — Gestion de formations PHP MVC</td>
-                <td>PHP 8.3 · MySQL · PDO · MVC</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td></td><td class="e5-yes">✓</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td></td>
-                <td class="e5-yes">✓</td><td></td><td class="e5-yes">✓</td>
+                <td>Projet scolaire</td>
+                <td>PHP 8.3 · MySQL · MVC</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td></td>
               </tr>
               <tr>
                 <td class="e5-real">My Jewellery</td>
-                <td>Projet scolaire — Site vitrine statique bijoux</td>
+                <td>Projet scolaire</td>
                 <td>HTML5 · CSS3</td>
-                <td class="e5-yes">✓</td><td></td><td></td><td class="e5-yes">✓</td>
-                <td></td><td></td><td></td>
-                <td class="e5-yes">✓</td><td></td><td></td>
+                <td class="e5-yes">✓</td>
+                <td></td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td></td>
+                <td></td>
               </tr>
               <tr>
                 <td class="e5-real">LAMP + GLPI</td>
-                <td>Projet scolaire — Infrastructure serveur Linux</td>
-                <td>Linux · Apache · MySQL · PHP · GLPI</td>
-                <td></td><td class="e5-yes">✓</td><td class="e5-yes">✓</td><td></td>
-                <td></td><td></td><td class="e5-yes">✓</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td></td>
+                <td>Projet scolaire</td>
+                <td>Linux · Apache · MySQL · GLPI</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td></td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td></td>
               </tr>
               <tr class="e5-stage-row">
                 <td class="e5-real">Stage 1re année</td>
-                <td>All Info Service — Laravel API REST</td>
-                <td>Laravel 12 · Sanctum · MySQL · PHPUnit</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td>
+                <td>Stage · All Info Service</td>
+                <td>Laravel 12 · API REST · PHPUnit</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
               </tr>
               <tr class="e5-stage-row">
                 <td class="e5-real">Stage 2e année</td>
-                <td>All Info Service — Application SaaS Admin TALL</td>
-                <td>Laravel · Tailwind · Alpine.js · Livewire</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td>
-                <td class="e5-yes">✓</td><td class="e5-yes">✓</td><td class="e5-yes">✓</td>
+                <td>Stage · All Info Service</td>
+                <td>Laravel · Tailwind · Alpine · Livewire</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
+                <td class="e5-yes">✓</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="e5-note">⚠️ Ce tableau est un aperçu. Référez-vous au fichier officiel pour les détails de compétences.</p>
         <div class="e5-legend">
           <span class="e5-legend-item e5-legend-proj">Projet scolaire</span>
           <span class="e5-legend-item e5-legend-stage">Stage en entreprise</span>
