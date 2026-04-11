@@ -560,14 +560,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border-color: #86efac;
   color: #16a34a;
 }
-/* Highlight card (Laravel/TALL) */
+/* Highlight card (Laravel/TALL) — bordure coloree uniquement, pas de barre permanente */
 .skill-domain--highlight {
   border-color: rgba(37,99,235,0.3);
   background: linear-gradient(135deg, var(--accent-light) 0%, #fff 60%);
-}
-.skill-domain--highlight::after {
-  transform: scaleX(1);
-  background: linear-gradient(90deg, var(--accent), #60a5fa);
 }
 .skill-domain--highlight .chip {
   background: var(--accent-light);
@@ -780,6 +776,12 @@ tr.e5-stage-row td.e5-real { color: #15803d; }
   margin-top: 1.5rem;
   display: flex;
   justify-content: flex-end;
+}
+.e5-period {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-style: italic;
 }
 .e5-note {
   font-size: 0.78rem;
