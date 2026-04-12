@@ -11,9 +11,21 @@ Thumbs.db
 desktop.ini
 
 # Éditeurs
-.vscode/settings.json
+.vscode/
 *.swp
 *.swo
 
 # Logs
 *.log
+
+# ==================================================
+# Fichiers de travail & Brouillons (Ne pas pusher)
+# ==================================================
+projet cours/
+projet stage/
+Site jeryweel/
+gitlav-fork-forma_2025/
+cv_*.html
+*.xlsx
+# Exceptions si on veut garder certains fichiers dans assets/
+!assets/docs/*.xlsx
