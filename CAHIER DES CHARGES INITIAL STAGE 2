@@ -1,0 +1,361 @@
+# 📘 Cahier des charges officiel  
+## Refonte complète du site **ADMIN MaGestionPsy**  
+**Framework cible : Laravel 12**
+
+---
+
+## 1. Contexte & objectifs généraux
+
+### 1.1 Contexte
+Le site admin actuel de MaGestionPsy :
+- repose sur une ancienne version de Laravel
+- présente des risques de sécurité (accès BDD, impersonation, paiements)
+
+MaGestionPsy est un **SaaS multi-clients**, où :
+- chaque client possède sa propre base de données métier
+- l’admin central pilote l’ensemble des comptes, paiements et données
+
+---
+
+### 1.2 Objectifs du projet
+Créer un **nouvel admin moderne, robuste et ultra-sécurisé**, permettant :
+- la gestion complète des utilisateurs (clients, prospects, freemium, exclus…)
+- la facturation admin MaGestionPsy
+- la gestion multi-BDD (clients + secrétaires)
+- la connexion aux comptes clients sans identifiants
+- la gestion des mises à jour globales des BDD
+- un audit exhaustif de toutes les actions
+- une vision statistique globale et détaillée
+
+---
+
+## 2. Technologies & contraintes
+
+### 2.1 Stack imposée
+- Laravel 12
+- Blade + Bootstrap 5 (ou Tailwind) + Fontawesome (icons)
+- Chart.js ou ApexChartJS pour les statistiques
+
+### 2.2 Contraintes générales
+- Code clair, structuré et documenté
+- Respect strict des bonnes pratiques Laravel
+- Utilisation de Services, Policies, Events, Jobs
+- Sécurité prioritaire absolue
+- Aucune action sensible sans traçabilité
+
+---
+
+## 3. Sécurité du site Admin (CRITIQUE)
+
+### 3.1 Authentification renforcée
+L’accès à l’admin doit être **plus sécurisé qu’un simple mot de passe** :
+- Mot de passe fort (min 12 caracètres + symbole + min + maj + chiffre)
+- Double authentification (2FA)
+- Protection contre le brute-force
+- Journalisation des connexions :
+  - date
+  - IP
+  - user-agent
+  - succès / échec
+  - utilisateur qui fait la tentative de connexion
+
+---
+
+### 3.2 Rôles & permissions (RBAC)
+Remplacer le système actuel (`users.role`) par un RBAC réel.
+
+Rôles minimum :
+- SuperAdmin (tout)
+- Admin Support (support et message du jour)
+- Admin Facturation (clients et facturations)
+- Admin Technique (update et clients)
+
+---
+
+### 3.3 Audit renforcé
+Tout doit être tracé :
+- connexions admin
+- changements de statut client
+- accès aux identifiants BDD
+- impersonations
+- actions financières
+- updates
+- backups
+- ...
+
+---
+
+## 4. Modèle de données existant – règles à respecter
+
+### 4.1 Tables centrales
+- `logipsy_clients` : clients
+- `users` : admins
+- `secretary` : secrétaires
+- `bdd` : informations de connexion aux bases clients
+- `lc2bdd` : liaison **Client → BDD**
+- `sec2bdd` : liaison **Secrétaire → BDD**
+
+---
+
+### 4.2 Règles métier BDD (OBLIGATOIRES)
+
+#### Accès BDD client
+Les informations de connexion sont stockées dans la table `bdd`.
+
+Un client est relié à une ou plusieurs BDD via `lc2bdd` :
+
+logipsy_clients.idClient → lc2bdd.client_id → bdd.id
+
+#### Accès BDD secrétaire
+Les secrétaires sont reliées à des BDD via `sec2bdd` :
+
+secretary.id → sec2bdd.secretary_id → bdd.id
+
+#### Cas particulier IMPORTANT
+Un même utilisateur peut être :
+- client
+- secrétaire
+
+Il peut donc avoir **au moins deux BDD distinctes** :
+- une BDD via `lc2bdd`
+- une BDD via `sec2bdd`
+
+L’admin doit afficher distinctement :
+- BDD accessibles en tant que client
+- BDD accessibles en tant que secrétaire
+
+---
+
+## 5. Statuts utilisateurs (référence métier)
+
+| Code | Statut |
+|-----:|--------|
+| 1 | Client |
+| 2 | Prospect |
+| 3 | Exclu |
+| 4 | Création en cours |
+| 5 | Échec de paiement |
+| 6 | Désabonnement |
+| 7 | Freemium |
+
+- Stockés dans `status_client`
+- Changement manuel possible
+- Commentaire obligatoire
+- Historisation complète
+
+---
+
+## 6. Gestion des clients (MODULE CENTRAL)
+
+### 6.1 Liste clients
+Table avancée avec filtres combinables :
+- statut
+- institution
+- date de paiement
+- impayés
+- options activées (email, SMS, Google)
+
+Colonnes minimum :
+- identifiant
+- nom / prénom
+- email
+- statut
+- offre
+- date prochain paiement
+- dettes (`due_total`)
+- actions rapides
+
+---
+
+### 6.2 Fiche client (vue “tout tout tout”)
+
+#### A. Informations générales
+- identité
+- coordonnées
+- adresse
+- institution
+- données contractuelles
+
+#### B. Statut & abonnement
+- statut
+- périodicité
+- montant
+- date prochain paiement
+- compteur échecs
+- actions admin avec justification
+
+#### C. Options client
+- notifications email ON/OFF
+- notifications SMS ON/OFF
+- synchronisation Google Agenda ON/OFF
+
+---
+
+#### D. Bases de données & accès (SENSIBLE)
+- BDD liées via `lc2bdd`
+- BDD liées via `sec2bdd` (si secrétaire)
+
+Pour chaque BDD :
+- mysql_host
+- mysql_db
+- mysql_user
+- mysql_pass masqué
+
+Contraintes :
+- stockage chiffré
+- icône œil pour déchiffrement
+- justification obligatoire
+- audit complet
+
+---
+
+#### E. Backups
+- liste des backups
+- lancer backup
+- historique
+- logs
+
+---
+
+#### F. Updates / migrations
+Basé sur :
+- `updates`
+- `logipsy_clients_updates`
+
+Fonctionnalités :
+- historique updates
+- relancer update client
+- logs d’erreurs
+
+---
+
+#### G. Support / tickets
+- liste tickets
+- messages
+- changement statut
+- historique
+
+---
+
+#### H. Facturation admin
+- création facture manuelle
+- lignes facture
+- PDF
+- envoi email
+- suivi impayés
+
+---
+
+#### I. Impersonation
+Bouton :
+> Se connecter à son espace
+
+Contraintes :
+- sans email/mdp
+- rôles autorisés uniquement
+- sortie impersonation
+- audit
+
+---
+
+#### J. Audit client
+Timeline complète de toutes les actions.
+
+---
+
+## 7. Gestion des utilisateurs Admin
+
+### 7.1 Utilisateurs admin (`users`)
+- CRUD admin
+- rôles & permissions
+- 2FA
+- historique connexions
+
+### 7.2 Secrétaires (`secretary`)
+- CRUD secrétaires
+- gestion liaisons `sec2bdd`
+- statut & sécurité
+
+---
+
+## 8. Support & tickets
+- gestion tickets
+- messages
+- priorités
+- progression
+- statistiques support
+
+---
+
+## 9. Messages du jour (`daily_messages`)
+- CRUD messages
+- date affichage
+- affichage première connexion
+- suivi lecture
+
+---
+
+## 10. News (`logipsy_news`)
+- publication
+- catégories
+- ciblage client
+
+---
+
+## 11. Backups
+- gestion globale
+- par client
+- rétention
+- logs
+
+---
+
+## 12. Mises à jour globales (CRITIQUE)
+Basé sur :
+- `updates`
+- `logipsy_clients_updates`
+
+Fonctionnalités :
+- exécution sur un ou plusieurs clients
+- suivi par client
+- logs erreurs
+
+---
+
+## 13. SMS & files d’attente
+- historique SMS (`sms_sent`)
+- gestion queue (`tmp_sms_to_sent`)
+- diagnostic erreurs
+
+---
+
+## 14. Statistiques & reporting
+- CA mensuel / annuel
+- churn
+- impayés
+- comparatifs
+- exports
+
+---
+
+## 15. UI / UX
+- interface claire
+- navigation par modules
+- tables filtrables
+- confirmations actions sensibles
+- onglets fiche client
+
+--
+
+
+## Connexion au site admin actuel en mode dev 
+
+- URL : https://admin1005.hypnose-nancy.com/adminmgp/login
+- Email : alexandre.db@gmail.com
+- MDP : test55
+
+--
+
+## Shéma de la BDD admin_test
+
+- URL : https://dbdiagram.io/d/admin_beta-69650f4fd6e030a024cc4a0f
