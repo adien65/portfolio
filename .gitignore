@@ -29,3 +29,11 @@ cv_*.html
 *.xlsx
 # Exceptions si on veut garder certains fichiers dans assets/
 !assets/docs/*.xlsx
+
+# Projets Laravel (code source stage — trop lourds pour GitHub Pages)
+projetstage1ereannee/
+
+# Fichiers brouillons à la racine
+rapport-stage2-draft.md
+CAHIER DES CHARGES INITIAL STAGE 2
+assets/docs/*-draft.md

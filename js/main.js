@@ -87,7 +87,6 @@ revealElements.forEach(el => revealObserver.observe(el));
 const phrases = [
   'Développeur Web.',
   'Étudiant BTS SIO SLAM.',
-  'Expert Solutions Informatiques.'
 ];
 
 const typewriterEl = document.getElementById('typewriter');
@@ -152,7 +151,7 @@ if (emailLink) {
 /* -----------------------------------------
    MODAL TABLEAU DE SYNTHÈSE E5
 ----------------------------------------- */
-const modalE5    = document.getElementById('modal-e5');
+const modalE5 = document.getElementById('modal-e5');
 const modalClose = document.getElementById('modal-e5-close');
 const modalOverlay = document.getElementById('modal-e5-overlay');
 const btnTableauE5 = document.getElementById('btn-tableau-e5');
@@ -179,7 +178,7 @@ if (btnTableauE5) {
   });
 }
 
-if (modalClose)   modalClose  .addEventListener('click', closeModal);
+if (modalClose) modalClose.addEventListener('click', closeModal);
 if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', e => {
